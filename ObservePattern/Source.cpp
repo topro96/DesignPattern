@@ -2,12 +2,12 @@
 
 using namespace std;
 
-class IObserve
+class IObsderve
 {
 	virtual void Update() = 0;
 };
 
-class IObservable
+class IObserdvable
 {
 public:
 	virtual void Add() = 0;
@@ -17,7 +17,7 @@ public:
 
 };
 
-class IMessage
+class IMedssage
 {
 
 };
