@@ -1,5 +1,5 @@
 #include "IObservable.h"
-
+#include "IObserve.h"
 
 void ChatRoom::Add(IObserve * observe)
 {
@@ -17,4 +17,14 @@ void ChatRoom::Notice()
 	{
 		member->Update();
 	}
+}
+
+void ChatRoom::SetStatus(std::string _status)
+{
+	status = _status;
+}
+
+std::string ChatRoom::GetStatus()
+{
+	return status;
 }

@@ -1,8 +1,9 @@
 #pragma once
 #include <iostream>
 #include <list>
-#include "IObserve.h"
+//#include "IObserve.h"
 
+class IObserve;
 
 class IObservable
 {
@@ -16,12 +17,16 @@ public:
 
 class ChatRoom : public IObservable
 {
-public:
-	std::list<IObserve*> members = std::list<IObserve*>();
+private:
+	std::list<IObserve*> members;
+	std::string status;
 public:
 	void Add(IObserve * observe);
 	void Remove(IObserve * observe);
 	void Notice();
+	void SetStatus(std::string _status);
+	std::string GetStatus();
 public:
+	
 	
 };
