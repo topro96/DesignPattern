@@ -3,22 +3,17 @@
 
 class BeverageDecorator : public Beverage
 {
+private:
+	double cost;
+	std::string desc;
 protected:
 	Beverage * beverage;
 public:
 	BeverageDecorator(Beverage * _beverage);
 
-	virtual double Cost() = 0;
-	virtual std::string Desc() = 0;
-};
+	void SetCost(const double & _costs);
+	void SetDesc(const std::string & _desc);
 
-class Scream : public BeverageDecorator
-{
-protected:
-	double cost;
-public:
-	Scream(Beverage * _beverage);
 	double Cost();
 	std::string Desc();
-
 };

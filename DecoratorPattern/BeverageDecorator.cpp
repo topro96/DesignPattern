@@ -2,22 +2,27 @@
 
 
 
-double Scream::Cost()
-{
-	return	beverage->Cost() + cost;
-}
-
-Scream::Scream(Beverage * _beverage) :
-	BeverageDecorator(_beverage)
+BeverageDecorator::BeverageDecorator(Beverage * _beverage) :
+	beverage(_beverage)
 {
 }
 
-std::string Scream::Desc()
+void BeverageDecorator::SetCost(const double & _costs)
 {
-	return beverage->Desc() + " Scream hey! ";
+	cost = _costs;
 }
 
-BeverageDecorator::BeverageDecorator(Beverage * _beverage)
+void BeverageDecorator::SetDesc(const std::string & _desc)
 {
-	beverage = _beverage;
+	desc = _desc;
+}
+
+double BeverageDecorator::Cost()
+{
+	return beverage->Cost();
+}
+
+std::string BeverageDecorator::Desc()
+{
+	return beverage->Desc() + " " + desc;
 }
