@@ -110,6 +110,15 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="Hero.h" />
+    <ClInclude Include="ICommand.h" />
+    <ClInclude Include="IInvoker.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Hero.cpp" />
+    <ClCompile Include="ICommand.cpp" />
+    <ClCompile Include="IInvoker.cpp" />
+    <ClCompile Include="Source.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

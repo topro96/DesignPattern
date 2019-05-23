@@ -8,7 +8,7 @@ public:
 	virtual void MoveForward() = 0;
 	virtual void MoveBack() = 0;
 	virtual void LieDown() = 0;
-
+	virtual void DoNothing() = 0;
 };
 
 class Hero : public IHeroAction
@@ -23,6 +23,6 @@ public:
 	void MoveForward();
 	void MoveBack();
 	void LieDown();
-
+	void DoNothing();
 };
 

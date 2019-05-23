@@ -1,8 +1,19 @@
 #pragma once
-class IInvoker
+#include "ICommand.h"
+
+class PlayerInvoker
 {
 public:
-	IInvoker();
-	~IInvoker();
+
+	ICommand * jump;
+	ICommand * move_forward;
+	ICommand * move_back;
+	ICommand * lie_down;
+	ICommand * fight;
+
+public:
+	PlayerInvoker(ICommand * _jump, ICommand * _forward, ICommand * _back, ICommand * _lie, ICommand * _fight);
+	~PlayerInvoker();
 };
+
 
