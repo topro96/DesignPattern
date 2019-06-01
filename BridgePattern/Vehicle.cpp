@@ -3,63 +3,67 @@
 #include <iostream>
 #include <string>
 
-
-void ManualGear::Handle()
+namespace BridgePattern
 {
-	std::cout << "\nManual Gear running!";
-}
 
-void AutoGear::Handle()
-{
-	std::cout << "\nAuto gear running!";
-}
+	void ManualGear::Handle()
+	{
+		std::cout << "\nManual Gear running!";
+	}
 
-void LED::Shine()
-{
-	std::cout << "\nLED lighting!";
-}
+	void AutoGear::Handle()
+	{
+		std::cout << "\nAuto gear running!";
+	}
 
-void Halogen::Shine()
-{
-	std::cout << "\nHalogen lighting!";
-}
+	void LED::Shine()
+	{
+		std::cout << "\nLED lighting!";
+	}
 
-Vehicle::Vehicle(Gear * _gear, Light * _light) :
-	gear(_gear),
-	light(_light)
-{
-}
+	void Halogen::Shine()
+	{
+		std::cout << "\nHalogen lighting!";
+	}
 
-Vehicle::~Vehicle()
-{
-	delete gear;
-	delete light;
-}
+	Vehicle::Vehicle(Gear * _gear, Light * _light) :
+		gear(_gear),
+		light(_light)
+	{
+	}
 
-void Vehicle::Lighting()
-{
-	light->Shine();
-}
+	Vehicle::~Vehicle()
+	{
+		delete gear;
+		delete light;
+	}
 
-void Vehicle::LaunchGear()
-{
-	gear->Handle();
-}
+	void Vehicle::Lighting()
+	{
+		light->Shine();
+	}
 
-Car::Car(Gear * _gear, Light * _light) :
-	Vehicle(_gear, _light)
-{
-}
+	void Vehicle::LaunchGear()
+	{
+		gear->Handle();
+	}
 
-Car::~Car()
-{
-}
+	Car::Car(Gear * _gear, Light * _light) :
+		Vehicle(_gear, _light)
+	{
+	}
 
-Truck::Truck(Gear * _gear, Light * _light) :
-	Vehicle(_gear, _light)
-{
-}
+	Car::~Car()
+	{
+	}
 
-Truck::~Truck()
-{
+	Truck::Truck(Gear * _gear, Light * _light) :
+		Vehicle(_gear, _light)
+	{
+	}
+
+	Truck::~Truck()
+	{
+	}
+
 }

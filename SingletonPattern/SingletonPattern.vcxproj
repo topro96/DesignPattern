@@ -19,8 +19,8 @@
     </ProjectConfiguration>
   </ItemGroup>
   <PropertyGroup Label="Globals">
-    <ProjectGuid>{4D92012F-297C-418A-B04F-BEE2E6964B83}</ProjectGuid>
-    <RootNamespace>ObservePattern</RootNamespace>
+    <ProjectGuid>{E8E73CF1-D506-4A9D-9613-09A24AC96B97}</ProjectGuid>
+    <RootNamespace>SingletonPattern</RootNamespace>
     <WindowsTargetPlatformVersion>8.1</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -110,13 +110,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="IObservable.cpp" />
-    <ClCompile Include="IObserve.cpp" />
-    <ClCompile Include="Source.cpp" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="IObservable.h" />
-    <ClInclude Include="IObserve.h" />
+    <ClInclude Include="Singleton.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

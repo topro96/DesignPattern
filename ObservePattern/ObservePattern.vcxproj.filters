@@ -24,18 +24,12 @@
     <ClCompile Include="IObserve.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="IMessage.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="IObservable.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="IObserve.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="IMessage.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

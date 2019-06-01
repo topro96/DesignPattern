@@ -1,6 +1,8 @@
 #include "Vehicle.h"
 #include <iostream>
 
+using namespace BridgePattern;
+
 int main()
 {
 	Vehicle* car = new Car(new AutoGear(), new LED());

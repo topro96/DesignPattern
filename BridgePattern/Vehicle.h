@@ -1,75 +1,80 @@
 #pragma once
 
-class Gear
+namespace BridgePattern
 {
-public:
-	virtual void Handle() = 0;
-};
+	class Gear
+	{
+	public:
+		virtual void Handle() = 0;
+	};
 
-class Light
-{
-public:
-	virtual void Shine()  = 0;
-};
+	class Light
+	{
+	public:
+		virtual void Shine() = 0;
+	};
 
-class ManualGear : public Gear
-{
-public:
-	void Handle();
-};
+	class ManualGear : public Gear
+	{
+	public:
+		void Handle();
+	};
 
-class AutoGear : public Gear
-{
-public:
-	void Handle();
-};
+	class AutoGear : public Gear
+	{
+	public:
+		void Handle();
+	};
 
-class LED : public Light
-{
-public:
-	void Shine();
-};
+	class LED : public Light
+	{
+	public:
+		void Shine();
+	};
 
-class Halogen : public Light
-{
-public:
-	void Shine();
-};
-
-
-class IVehicleAction
-{
-public:
-	virtual void Lighting() = 0;
-	virtual void LaunchGear() = 0;
-};
+	class Halogen : public Light
+	{
+	public:
+		void Shine();
+	};
 
 
-class Vehicle : public IVehicleAction
-{
-private:
-	Gear * gear;
-	Light * light;
-public:
-	Vehicle(Gear * _gear, Light * _light);
-	virtual ~Vehicle();
+	class IVehicleAction
+	{
+	public:
+		virtual void Lighting() = 0;
+		virtual void LaunchGear() = 0;
+	};
 
-public:
-	virtual void Lighting();
-	virtual void LaunchGear();
-};
 
-class Car : public Vehicle
-{
-public:
-	Car(Gear * _gear, Light * _light);
-	~Car();
-};
+	class Vehicle : public IVehicleAction
+	{
+	private:
+		Gear * gear;
+		Light * light;
+	public:
+		Vehicle(Gear * _gear, Light * _light);
+		virtual ~Vehicle();
 
-class Truck : public Vehicle
-{
-public:
-	Truck(Gear * _gear, Light * _light);
-	~Truck();
-};
+	public:
+		virtual void Lighting();
+		virtual void LaunchGear();
+	};
+
+	class Car : public Vehicle
+	{
+	public:
+		Car(Gear * _gear, Light * _light);
+		~Car();
+	};
+
+	class Truck : public Vehicle
+	{
+	public:
+		Truck(Gear * _gear, Light * _light);
+		~Truck();
+	};
+
+
+}
 
